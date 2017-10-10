@@ -1,6 +1,5 @@
 package doublelinkedlist;
 
-
 public class Chain implements LinearList {
 
     //data member
@@ -78,6 +77,7 @@ public class Chain implements LinearList {
             }
             removeElement = q.next.element;
             q.next = q.next.next;
+            System.out.println(q.previous);
         }
         size--;
         return removeElement;
@@ -90,17 +90,18 @@ public class Chain implements LinearList {
         }
 
         if (index == 0) {
-            firstNode = new ChainNode(firstNode, theElement, lastNode);
-            
-        } else {
-            ChainNode p = firstNode;
-            for (int i = 0; i < index - 1; i++) {
-                p = p.next;
-            }
+            firstNode = new ChainNode(theElement, firstNode, null);
 
-           p.next = new ChainNode(firstNode, theElement, lastNode);
-//           p.next.previous = firstNode;
-//           System.out.println(p.next.previous);
+        } else {
+            lastNode = firstNode;
+            for (int i = 0; i < index - 1; i++) {
+                lastNode = lastNode.next;
+            }
+            lastNode.next = new ChainNode(theElement, lastNode.next, lastNode.previous);
+            lastNode.previous = firstNode.next;
+            System.out.println(lastNode.previous);
+//           p.next.previous.element = firstNode.element;
+//           System.out.println(p.next.previous.element);
         }
         size++;
     }
@@ -125,5 +126,8 @@ public class Chain implements LinearList {
         return new String(s);
     }
 
+    public static void main(String[] args) {
+
+    }
 
 }

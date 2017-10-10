@@ -14,9 +14,9 @@ public class Driver {
         x.add(1, "Dua");
 //        x.add(2, "Tiga");
 //        x.add(3, 4);
-
-
-      
+        ChainNode previous = x.lastNode.previous;
+        System.out.println(x.toString());
+        System.out.println();
 //        System.out.println("Apakah data awal kosong? "+ x.isEmpty());
 //        System.out.println("======================================");
 //        System.out.println("Data di isi");
@@ -39,6 +39,7 @@ public class Driver {
 //        System.out.println("Remove index 3 dan index 6");
 //        x.remove(3);
 //        x.remove(6);
+//        
 //        System.out.println(x.toString());
 //        System.out.println("Size = "+x.size);
 //        System.out.println("======================================");

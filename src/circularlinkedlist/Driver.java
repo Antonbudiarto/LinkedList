@@ -55,7 +55,6 @@ public class Driver {
         System.out.println("Index Of(objek baru)");
         System.out.println("'baru' berada pada index ke - "+x.indexOf("baru"));
         System.out.println("======================================");
-        System.out.println("Bukti Circuler");
  
     }
 }

@@ -16,7 +16,7 @@ public class ChainNode {
     public ChainNode(Object element) {
         this.element = element;
     }
-    public ChainNode(ChainNode previous,Object element, ChainNode next) {
+    public ChainNode(Object element, ChainNode next, ChainNode previous) {
         this.element = element;
         this.next = next;
         this.previous = previous;
